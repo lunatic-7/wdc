@@ -1,0 +1,108 @@
+>>> Fontawesome kit tag:
+<script src="https://kit.fontawesome.com/258973f2c5.js" crossorigin="anonymous"></script>
+
+email = <i class="fa-solid fa-envelope"></i>
+phone = <i class="fa-solid fa-phone"></i>
+tree = <i class="fa-solid fa-tree"></i>
+leaf = <i class="fa-brands fa-pagelines"></i>
+tree-city = <i class="fa-solid fa-tree-city"></i>
+chart = <i class="fa-solid fa-chart-simple"></i>
+face-grim = <i class="fa-regular fa-face-grimace"></i>
+leaf 2 = <i class="fa-solid fa-cannabis"></i>
+handshake = <i class="fa-solid fa-handshake"></i>
+water = <i class="fa-solid fa-water"></i>
+plant die = <i class="fa-solid fa-plant-wilt"></i>
+temperature = <i class="fa-solid fa-temperature-half"></i>
+feather = <i class="fa-solid fa-feather"></i>
+log in = <i class="fa-solid fa-right-to-bracket"></i>
+log out = <i class="fa-solid fa-right-from-bracket"></i>
+
+
+
+>>> color scheme:
+EDF1D6 cream
+9DC08B light green
+609966 green
+40513B dark green
+DDDDDD greyish
+EEEEEE greyish white
+
+
+
+>>> Hide sidebar css:
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+
+>>> Slide animation when user interact with the screen
+
+//Javascript for Animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+      // Remove this else block if you don't wanna show animation over and over again 
+      else {
+        entry.target.classList.remove('show');
+      }
+    });
+  });
+
+const hiddenElements = document.querySelectorAll('.hid');
+hiddenElements.forEach((el) => observer.observe(el));
+
+// CSS for Animation
+.hid {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
+  
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0)
+}
+
+// Add hid class to that element on which you want the animation.
+
+If we have 3-4 divs and we want them to animate one by one (Beleive me it's a good
+animation), give all divs a class named logo and add the following css:
+
+.logo:nth-child(2) {
+     transition-delay: 200ms;
+}
+
+.logo:nth-child(3) {
+     transition-delay: 400ms;
+}
+
+.logo:nth-child(4) {
+     transition-delay: 600ms;
+}
+
+
+
+>> show spinner bofore content
+<div id="spinner-container">
+        <img id="spinner-image" src="./spinner.gif" alt="Loading Spinner">
+</div>
+
+(Give an id content to main contents div, so that we can hide it and show using js)
+
+// Function to show the content after a delay
+function showContent() {
+    var spinnerContainer = document.getElementById('spinner-container');
+    var content = document.getElementById('content');
+
+    spinnerContainer.classList.add('hidden');
+    content.style.display = 'block';
+}
+
+// Show spinner for 2-3 seconds
+setTimeout(showContent, 3000); // Adjust the timeout value as needed
