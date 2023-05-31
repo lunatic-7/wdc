@@ -10,6 +10,8 @@ Headline: Building a Sustainable Future through Integrated Science and Technolog
 Subheading: Harnessing the power of innovation and collaboration for a greener tomorrow.
 Key Features Section:
 
+Quote: "Synergy of science, technology, and integration for a sustainable future."
+
 Feature 1: Renewable Energy
 
 Icon: [Insert an icon representing renewable energy]
